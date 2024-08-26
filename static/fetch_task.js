@@ -1,4 +1,4 @@
-const apiKey = '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'
+const apiKey = 'sk-kk9LLc2GvipZzkB0spR-fB4RU4q0XVf2d9Fkb144k2T3BlbkFJE_ZDdj9EuJWNWpv6CJezPx2ae2f1afFEaX7u1AVaYA'
 
 // task 1: provide the OpenAI chat completion url
 const url = 'replace_with_openai_url' 

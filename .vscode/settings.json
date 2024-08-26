@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/a7fc1251-d5ad-4920-acd8-f2c659a6f1ef/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/movie-boss",
+    "appService.deploySubpath": "."
+}
