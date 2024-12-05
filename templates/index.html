@@ -8,34 +8,32 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@700&family=Poppins:wght@400;700&display=swap"
 		rel="stylesheet">
-		<link rel="stylesheet" href="{{ url_for('static',filename='index.css') }}">
+		<link rel="stylesheet" href="static/index.css">
 	</head>
 
 	<body>
 		<header>
-			<img src="{{ url_for('static',filename='logo-movie.png') }}" alt="MoviePitch">
+			<img src="static/logo-movie.png" alt="MoviePitch">
 			<a href="/"><span>Ask Me Anything</span></a>
 		</header>
 		<main>	
 			<!-- The Setup -->	
 			<section id="setup-container">
 				<div class="setup-inner">
-					<img src="{{ url_for('static',filename='movieboss.png') }}">
+					<img src="static/movieboss.png">
 					<div class="speech-bubble-ai" id="speech-bubble-ai">
 						<p id="movie-boss-text" 
 						   style="max-height: 220px; width: 200px; 
 						        overflow-y: scroll; display:inline-block;">
-							<! Give me a one-sentence concept and I'll give you an eye-catching title, a synopsis the studios will love, a movie poster...
-							AND choose the cast! >
 							Hi, I'm Bob - an AI agent. Ask me a question, and I will try my best to answer!
 						</p>	
 					</div>
 				</div>
 				<div class="setup-inner setup-input-container" id="setup-input-container">
 					<textarea id="setup-textarea" placeholder="Enter your question here." 
-					          onkeydown="if(event.keyCode == 13) return false;"></textarea>
+					          onkeyup="if(event.keyCode === 13) $('send-btn').click()"></textarea>
 					<button class="send-btn" id="send-btn" aria-label="send">
-							<img src="{{ url_for('static',filename='send-btn-icon.png') }}" alt="send">
+							<img src="static/send-btn-icon.png" alt="send">
 					</button>
 				</div>
 			</section>	
@@ -48,9 +46,18 @@
 			</section>
 		</main>	
 		<footer>
-			&copy; 2023 NeuronTWL - Sample Demo
+			&copy; 2024 NeuronTWL - Sample Demo
 		</footer>
-		<script type="module" src="{{ url_for('static',filename='llm_bot.js') }}"></script>
+    <script>
+      document.getElementById("setup-textarea")
+              .addEventListener("keyup", function(event) {
+                 event.preventDefault();
+                 if (event.keyCode === 13) {
+                     document.getElementById("send-btn").click();
+                 }
+      });
+    </script>
+    <script type="module" src="static/llm_bot.js"></script>
 	</body>
 
 </html>

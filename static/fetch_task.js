@@ -23,6 +23,8 @@ function fetchBotReply(prompt) {
     .then(data => console.log(data))
 }
 
+//modify with: data.choices[0].message.content.trim()
+
 //fetchBotReply("What day is after Monday?")
 
 
